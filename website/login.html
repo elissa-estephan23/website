@@ -1,0 +1,21 @@
+<?php
+session_start();
+$conn = new mysqli("localhost", "root", "", "nefaa_db");
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+$result = $conn->query($query);
+
+if ($result->num_rows > 0) {
+    $_SESSION['username'] = $username;
+    header("Location: dashboard.html");
+} else {
+    echo "<script>alert('Invalid login credentials!'); window.location.href='../login.html';</script>";
+}
+?>

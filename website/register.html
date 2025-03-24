@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register to Nefaa Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/apply-styles.css"> <!-- Additional Styles -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo" id="logo">Nefaa Services</div>
+        <button id="lang-toggle">العربية</button> <!-- Language toggle button -->
+        
+        <!-- Home Link (on the right) -->
+        <nav>
+            <ul>
+                <li><a href="index.html" id="home-link">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Registration Form Section -->
+    <section class="registration-form-section">
+        <h2 id="register-title">Register to Nefaa Services</h2>
+        <form action="#" method="POST" class="registration-form">
+            <div class="input-group">
+                <label for="name" id="label-name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email" id="label-email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password" id="label-password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password" id="label-confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+
+            <button type="submit" class="submit-btn" id="register-btn">Register</button>
+        </form>
+    </section>
+
+    <footer>
+        <p id="footer-text">© 2025 Nefaa Services Portal | <a href="terms.html" id="terms-link">Terms & Conditions</a> | <a href="privacy.html" id="privacy-link">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript to toggle languages -->
+    <script>
+        const langToggle = document.getElementById('lang-toggle');
+        const elementsToTranslate = {
+            // English to Arabic Translations
+            en: {
+                "logo": "Nefaa Services",
+                "home-link": "Home",
+                "services-link": "Services",
+                "contact-link": "Contact",
+                "faqs-link": "FAQs",
+                "login-link": "Login/Register",
+                "register-title": "Register to Nefaa Services",
+                "label-name": "Full Name",
+                "label-email": "Email",
+                "label-password": "Password",
+                "label-confirm-password": "Confirm Password",
+                "register-btn": "Register",
+                "footer-text": "© 2025 Nefaa Services Portal | <a href='terms.html'>Terms & Conditions</a> | <a href='privacy.html'>Privacy Policy</a>"
+            },
+            ar: {
+                "logo": "خدمات نفع",
+                "home-link": "الصفحة الرئيسية",
+                "services-link": "الخدمات",
+                "contact-link": "اتصل بنا",
+                "faqs-link": "الأسئلة الشائعة",
+                "login-link": "تسجيل الدخول/التسجيل",
+                "register-title": "التسجيل في خدمات نفع",
+                "label-name": "الاسم الكامل",
+                "label-email": "البريد الإلكتروني",
+                "label-password": "كلمة المرور",
+                "label-confirm-password": "تأكيد كلمة المرور",
+                "register-btn": "التسجيل",
+                "footer-text": "© 2025 بوابة خدمات نفع | <a href='terms.html'>الشروط والأحكام</a> | <a href='privacy.html'>سياسة الخصوصية</a>"
+            }
+        };
+
+        langToggle.addEventListener('click', () => {
+            const currentLang = document.documentElement.lang === 'ar' ? 'ar' : 'en'; 
+            const newLang = currentLang === 'en' ? 'ar' : 'en';
+            document.documentElement.lang = newLang;
+
+            // Switch button text
+            langToggle.textContent = newLang === 'en' ? 'العربية' : 'English';
+
+            // Update page content based on selected language
+            for (let id in elementsToTranslate[newLang]) {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (id === 'footer-text') {
+                        // Special handling for links in footer text
+                        element.innerHTML = elementsToTranslate[newLang][id];
+                    } else {
+                        element.textContent = elementsToTranslate[newLang][id];
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

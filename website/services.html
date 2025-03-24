@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Nefaa Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .services-section {
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .services-section h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .service-card h3 {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #007BFF;
+        }
+
+        .service-card p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .service-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .service-card a:hover {
+            background-color: #0056b3;
+        }
+
+        .service-details {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 16px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Nefaa Services</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Services Section -->
+    <div class="services-section">
+        <h1>Our Services</h1>
+        <div class="service-cards">
+            <!-- Service Card 1 -->
+            <div class="service-card">
+                <img src="images/driving-license.jpg" alt="Driving License">
+                <h3>Driving License Application</h3>
+                <p>Apply for a new driving license with ease and speed. Follow our simple process and get your license in no time!</p>
+                <a href="javascript:void(0);" onclick="toggleDetails(1)">Learn More</a>
+                <div class="service-details" id="service-details-1">
+                    <p>Our driving license application process is straightforward and quick. We guide you through the paperwork and help you schedule your driving test. The service includes:</p>
+                    <ul>
+                        <li>Online form submission</li>
+                        <li>Appointment scheduling for the driving test</li>
+                        <li>Document review and verification</li>
+                        <li>Guidance on requirements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card">
+                <img src="images/renew-license.jpg" alt="Renew Driving License">
+                <h3>Renew Driving License</h3>
+                <p>Renew your driving license before it expires. We make the process simple and quick for you.</p>
+                <a href="javascript:void(0);" onclick="toggleDetails(2)">Learn More</a>
+                <div class="service-details" id="service-details-2">
+                    <p>Our license renewal service ensures that you stay on the road legally without worrying about expiration. The process includes:</p>
+                    <ul>
+                        <li>Document review</li>
+                        <li>Online form submission</li>
+                        <li>Payment processing</li>
+                        <li>Fast appointment scheduling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card">
+                <img src="images/vehicle-registration.jpg" alt="Vehicle Registration">
+                <h3>Vehicle Registration</h3>
+                <p>Register your vehicle and get your car documents updated. We offer fast and efficient vehicle registration services.</p>
+                <a href="javascript:void(0);" onclick="toggleDetails(3)">Learn More</a>
+                <div class="service-details" id="service-details-3">
+                    <p>Register your vehicle with us, and we'll handle all the necessary paperwork and ensure your registration process goes smoothly. Services include:</p>
+                    <ul>
+                        <li>Vehicle inspection assistance</li>
+                        <li>Document verification</li>
+                        <li>Registration renewal and transfer</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="service-card">
+                <img src="images/driver-training.jpg" alt="Driver Training">
+                <h3>Driver Training</h3>
+                <p>Get trained by certified driving instructors. We offer lessons to prepare you for your driving test.</p>
+                <a href="javascript:void(0);" onclick="toggleDetails(4)">Learn More</a>
+                <div class="service-details" id="service-details-4">
+                    <p>Our driver training services help you become a confident and safe driver. We offer both theoretical and practical training to prepare you for the road. Details of the service include:</p>
+                    <ul>
+                        <li>Comprehensive driving lessons</li>
+                        <li>Driving exam preparation</li>
+                        <li>Flexible scheduling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>For more information or to schedule an appointment, feel free to contact us:</p>
+        <p>Email: <a href="mailto:support@nefaaservices.com">support@nefaaservices.com</a></p>
+        <p>Phone: <a href="tel:+9611234567">+961 1 234 567</a></p>
+    </div>
+
+    <script>
+        // Function to toggle visibility of the service details
+        function toggleDetails(serviceId) {
+            const serviceDetails = document.getElementById(`service-details-${serviceId}`);
+            if (serviceDetails.style.display === "none" || serviceDetails.style.display === "") {
+                serviceDetails.style.display = "block";
+            } else {
+                serviceDetails.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

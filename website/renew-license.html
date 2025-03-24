@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renew Driving License</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo" id="logo">Renew your driving license</div>
+        <button id="lang-toggle">العربية</button> <!-- Language toggle button -->
+        
+        <!-- Home Link (on the right) -->
+        <nav>
+            <ul>
+                <li><a href="index.html" id="home-link">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Form Section -->
+    <div class="container">
+        <h1 id="form-title">Renew Your Driving License</h1>
+        <p id="form-description">Fill in the details to renew your license</p>
+
+        <form id="renewForm">
+            <label for="fullName" id="label-fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="licenseNumber" id="label-licenseNumber">License Number:</label>
+            <input type="text" id="licenseNumber" name="licenseNumber" required>
+
+            <label for="dob" id="label-dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="expiryDate" id="label-expiryDate">Current License Expiry Date:</label>
+            <input type="date" id="expiryDate" name="expiryDate" required>
+
+            <label for="email" id="label-email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone" id="label-phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address" id="label-address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="uploadID" id="label-uploadID">Upload ID Proof:</label>
+            <input type="file" id="uploadID" name="uploadID" accept="image/*,application/pdf" required>
+
+            <button type="submit" id="submit-btn">Submit Renewal</button>
+        </form>
+    </div>
+
+    <script>
+        // Language Toggle functionality
+        const langToggle = document.getElementById('lang-toggle');
+        const elementsToTranslate = {
+            en: {
+                "logo": "Renew your driving license",
+                "home-link": "Home",
+                "form-title": "Renew Your Driving License",
+                "form-description": "Fill in the details to renew your license",
+                "label-fullName": "Full Name:",
+                "label-licenseNumber": "License Number:",
+                "label-dob": "Date of Birth:",
+                "label-expiryDate": "Current License Expiry Date:",
+                "label-email": "Email:",
+                "label-phone": "Phone Number:",
+                "label-address": "Address:",
+                "label-uploadID": "Upload ID Proof:",
+                "submit-btn": "Submit Renewal"
+            },
+            ar: {
+                "logo": "تجديد رخصة القيادة الخاصة بك",
+                "home-link": "الصفحة الرئيسية",
+                "form-title": "تجديد رخصة القيادة الخاصة بك",
+                "form-description": "املأ التفاصيل لتجديد رخصتك",
+                "label-fullName": "الاسم الكامل:",
+                "label-licenseNumber": "رقم الرخصة:",
+                "label-dob": "تاريخ الميلاد:",
+                "label-expiryDate": "تاريخ انتهاء صلاحية الرخصة الحالية:",
+                "label-email": "البريد الإلكتروني:",
+                "label-phone": "رقم الهاتف:",
+                "label-address": "العنوان:",
+                "label-uploadID": "تحميل إثبات الهوية:",
+                "submit-btn": "إرسال تجديد الرخصة"
+            }
+        };
+
+        // Change language on button click
+        langToggle.addEventListener('click', () => {
+            const currentLang = document.documentElement.lang === 'ar' ? 'ar' : 'en'; 
+            const newLang = currentLang === 'en' ? 'ar' : 'en';
+            document.documentElement.lang = newLang;
+
+            // Switch button text
+            langToggle.textContent = newLang === 'en' ? 'العربية' : 'English';
+
+            // Update page content based on selected language
+            for (let id in elementsToTranslate[newLang]) {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (id === 'form-description' || id === 'form-title') {
+                        element.textContent = elementsToTranslate[newLang][id];
+                    } else if (id === 'submit-btn') {
+                        element.textContent = elementsToTranslate[newLang][id];
+                    } else {
+                        element.innerHTML = elementsToTranslate[newLang][id];
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

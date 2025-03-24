@@ -1,0 +1,72 @@
+/* Global styles */
+body {
+    background-color: #1e1e1e; /* Dark gray background */
+    color: white; /* Light text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the form */
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #2c2c2c; /* Slightly lighter than body */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+/* Titles */
+h1, h2 {
+    text-align: center;
+    color: #00aaff; /* Light blue heading */
+}
+
+/* Label styling */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Inputs and Select boxes */
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #3c3c3c; /* Darker field background */
+    color: white;
+}
+
+/* Input focus effect */
+input:focus, select:focus {
+    border-color: #00aaff;
+    outline: none;
+}
+
+/* Submit button */
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+    }
+}
